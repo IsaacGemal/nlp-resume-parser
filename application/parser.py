@@ -1,8 +1,9 @@
-import pdftotext
 import openai
 import re
 import logging
 import json
+# import fitz
+import PyPDF2
 
 class ResumeParser():
     def __init__(self, OPENAI_API_KEY):
@@ -16,22 +17,33 @@ class ResumeParser():
         logging.basicConfig(filename='logs/parser.log', level=logging.DEBUG)
         self.logger = logging.getLogger()
 
-    def pdf2string(self: object, pdf_path: str) -> str:
+    def pdf2string(self, pdf_path: str) -> str:
         """
         Extract the content of a pdf file to string.
         :param pdf_path: Path to the PDF file.
         :return: PDF content string.
         """
+
         with open(pdf_path, "rb") as f:
-            pdf = pdftotext.PDF(f)
+            pdfreader = PyPDF2.PdfReader(f)
+            pdf = ''
+            for page in pdfreader.pages:
+                pdf = page.extract_text()
+
+        # doc = fitz.open(pdf_path)
+        # pdf = ""
+        # for page in doc:
+        #     pdf += page.get_text()
+
         pdf_str = "\n\n".join(pdf)
         pdf_str = re.sub('\s[,.]', ',', pdf_str)
         pdf_str = re.sub('[\n]+', '\n', pdf_str)
         pdf_str = re.sub('[\s]+', ' ', pdf_str)
         pdf_str = re.sub('http[s]?(://)?', '', pdf_str)
+
         return pdf_str
 
-    def query_completion(self: object,
+    def query_completion(self,
                         prompt: str,
                         engine: str = 'text-curie-001',
                         temperature: float = 0.0,
@@ -68,7 +80,7 @@ class ResumeParser():
         )
         return response
     
-    def query_resume(self: object, pdf_path: str) -> dict:
+    def query_resume(self, pdf_path: str) -> dict:
         """
         Query GPT-3 for the work experience and / or basic information from the resume at the PDF file path.
         :param pdf_path: Path to the PDF file.
@@ -80,6 +92,7 @@ class ResumeParser():
         prompt = self.prompt_questions + '\n' + pdf_str
         max_tokens = 1500
         engine = 'text-davinci-002'
+        print(prompt)
         response = self.query_completion(prompt,engine=engine,max_tokens=max_tokens)
         response_text = response['choices'][0]['text'].strip()
         print(response_text)

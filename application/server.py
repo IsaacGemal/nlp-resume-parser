@@ -2,8 +2,10 @@ import os
 import secrets
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
-from parser import ResumeParser
+
 import argparse
+
+from parser import ResumeParser
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
@@ -47,7 +49,7 @@ def display_resume(name):
 
 if __name__ == "__main__":
     host = os.getenv("RESUME_PARSER_HOST", '127.0.0.1')
-    port = os.getenv("RESUME_PARSER_PORT", '5000')
+    port = os.getenv("RESUME_PARSER_PORT", '8080')
     assert port.isnumeric(), 'port must be an integer'
     port = int(port)
     app.run(host=host, port=port, debug=True)
