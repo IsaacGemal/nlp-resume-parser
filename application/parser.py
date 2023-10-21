@@ -2,18 +2,17 @@ import openai
 import re
 import logging
 import json
-# import fitz
 import PyPDF2
 
 class ResumeParser():
     def __init__(self, OPENAI_API_KEY):
-        # set GPT-3 API key from the environment vairable
+        # set GPT-3 API key from the environment variable
         openai.api_key = OPENAI_API_KEY
         # GPT-3 completion questions
         self.prompt_questions = \
 """Summarize the text below into a JSON with exactly the following structure {basic_info: {first_name, last_name, full_name, email, phone_number, location, portfolio_website_url, linkedin_url, github_main_page_url, university, education_level (BS, MS, or PhD), graduation_year, graduation_month, majors, GPA}, work_experience: [{job_title, company, location, duration, job_summary}], project_experience:[{project_name, project_discription}]}
 """
-       # set up this parser's logger
+        # set up this parser's logger
         logging.basicConfig(filename='logs/parser.log', level=logging.DEBUG)
         self.logger = logging.getLogger()
 
@@ -23,22 +22,22 @@ class ResumeParser():
         :param pdf_path: Path to the PDF file.
         :return: PDF content string.
         """
-
         with open(pdf_path, "rb") as f:
             pdfreader = PyPDF2.PdfReader(f)
             pdf = ''
             for page in pdfreader.pages:
-                pdf = page.extract_text()
+                pdf += page.extract_text()
 
-        # doc = fitz.open(pdf_path)
-        # pdf = ""
-        # for page in doc:
-        #     pdf += page.get_text()
+        # Replace whitespace followed by a comma or period with just a comma.
+        pdf_str = re.sub(r'\s[,.]', ',', pdf)
 
-        pdf_str = "\n\n".join(pdf)
-        pdf_str = re.sub('\s[,.]', ',', pdf_str)
+        # Replace multiple consecutive newline characters with a single newline.
         pdf_str = re.sub('[\n]+', '\n', pdf_str)
-        pdf_str = re.sub('[\s]+', ' ', pdf_str)
+
+        # Replace one or more whitespace characters with a single space.
+        pdf_str = re.sub(r'[\s]+', ' ', pdf_str)
+
+        # Remove 'http', 'https', and possible '://' from the text.
         pdf_str = re.sub('http[s]?(://)?', '', pdf_str)
 
         return pdf_str
@@ -68,15 +67,15 @@ class ResumeParser():
         self.logger.info(f'estimated prompt tokens: {estimated_prompt_tokens}')
         estimated_answer_tokens = 2049 - estimated_prompt_tokens
         if estimated_answer_tokens < max_tokens:
-            self.logger.warning('estimated_answer_tokens lower than max_tokens, changing max_tokens to', estimated_answer_tokens)
-        response = openai.Completion.create(
-        engine=engine,
-        prompt=prompt,
-        temperature=temperature,
-        max_tokens=min(4096-estimated_prompt_tokens, max_tokens),
-        top_p=top_p,
-        frequency_penalty=frequency_penalty,
-        presence_penalty=presence_penalty
+            self.logger.warning('estimated_answer_tokens lower than max_tokens, changing max_tokens to %s', estimated_answer_tokens)
+        response = openai.completions.create(
+            model=engine,
+            prompt=prompt,
+            temperature=temperature,
+            max_tokens=min(4096-estimated_prompt_tokens, max_tokens),
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty
         )
         return response
     
@@ -88,13 +87,18 @@ class ResumeParser():
         """
         resume = {}
         pdf_str = self.pdf2string(pdf_path)
-        print(pdf_str)
         prompt = self.prompt_questions + '\n' + pdf_str
         max_tokens = 1500
-        engine = 'text-davinci-002'
-        print(prompt)
+        engine = 'gpt-3.5-turbo-instruct'
         response = self.query_completion(prompt,engine=engine,max_tokens=max_tokens)
-        response_text = response['choices'][0]['text'].strip()
+        response_text = response.choices[0].text.strip()
         print(response_text)
-        resume = json.loads(response_text)
+        try:
+            resume = json.loads(response_text)
+        except json.JSONDecodeError as e:
+            print("Error decoding JSON:", e)
+            print("Received response:", response_text)
+            return {}
         return resume
+
+

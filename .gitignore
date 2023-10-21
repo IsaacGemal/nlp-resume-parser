@@ -1,3 +1,5 @@
 # ignore pycache
 **/__pycache__
-.env
+run_server - with key.bat
+application/uploads
+application/logs

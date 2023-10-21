@@ -558,3 +558,118 @@ INFO:werkzeug:127.0.0.1 - - [01/Jun/2023 17:36:37] "GET /resume/Qianhui_Ma_CV.pd
 INFO:werkzeug:127.0.0.1 - - [01/Jun/2023 17:36:37] "GET /resume/Qianhui_Ma_CV.pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Jun/2023 17:36:37] "GET /resume/Qianhui_Ma_CV.pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Jun/2023 17:36:37] "GET /resume/Qianhui_Ma_CV.pdf?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:25] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:25] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:25] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:03:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:25] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:25] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:25] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:23:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:35] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:35] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:35] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:35] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:35] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:24:41] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:27:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:06] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:06] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:06] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:06] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:06] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:30:59] "[32mPOST / HTTP/1.1[0m" 302 -
+INFO:root:query_completion: using text-davinci-002
+INFO:root:estimated prompt tokens: 571
+WARNING:root:estimated_answer_tokens lower than max_tokens, changing max_tokens to 1478
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\igema\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpcore.connection:connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000250415591F0>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x0000025041565D50> server_hostname='api.openai.com' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000025040047D10>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 21 Oct 2023 02:31:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'text-davinci-002'), (b'openai-organization', b'user-haac0znxeomjn2xo0qmkzror'), (b'openai-processing-ms', b'10180'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'250000'), (b'x-ratelimit-limit-tokens_usage_based', b'250000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'248500'), (b'x-ratelimit-remaining-tokens_usage_based', b'248500'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'360ms'), (b'x-ratelimit-reset-tokens_usage_based', b'360ms'), (b'x-request-id', b'9bcac5d78d623799b9700f748aff29a6'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'819614f098f941c3-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:31:10] "GET /resume/Isaac_Gemal_-_Resume_Post_Graduation.pdf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:31:24] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\igema\\nlp-resume-parser\\application\\parser.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug: * Detected change in 'C:\\Users\\igema\\nlp-resume-parser\\application\\parser.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 135-886-755
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:36:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:36:31] "[32mPOST / HTTP/1.1[0m" 302 -
+INFO:root:query_completion: using gpt-3.5-turbo-instruct
+INFO:root:estimated prompt tokens: 571
+WARNING:root:estimated_answer_tokens lower than max_tokens, changing max_tokens to 1478
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\igema\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpcore.connection:connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000013203134410>
+DEBUG:httpcore.connection:start_tls.started ssl_context=<ssl.SSLContext object at 0x00000132044DA2D0> server_hostname='api.openai.com' timeout=5.0
+DEBUG:httpcore.connection:start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000132044FD2B0>
+DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 21 Oct 2023 02:36:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-3.5-turbo-instruct'), (b'openai-organization', b'user-haac0znxeomjn2xo0qmkzror'), (b'openai-processing-ms', b'7070'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'250000'), (b'x-ratelimit-limit-tokens_usage_based', b'250000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'248500'), (b'x-ratelimit-remaining-tokens_usage_based', b'248500'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'360ms'), (b'x-ratelimit-reset-tokens_usage_based', b'360ms'), (b'x-request-id', b'c29b7f7040de27122547fd18c7ef828c'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'81961d0b09404411-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 200 OK"
+DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
+DEBUG:httpcore.http11:receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+INFO:werkzeug:127.0.0.1 - - [20/Oct/2023 22:36:38] "GET /resume/Isaac_Gemal_-_Resume_Post_Graduation.pdf HTTP/1.1" 200 -
