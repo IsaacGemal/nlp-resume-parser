@@ -10,7 +10,7 @@ class ResumeParser():
         openai.api_key = OPENAI_API_KEY
         # GPT-3 completion questions
         self.prompt_questions = \
-"""Summarize the text below into a JSON with exactly the following structure {basic_info: {first_name, last_name, full_name, email, phone_number, location, portfolio_website_url, linkedin_url, github_main_page_url, university, education_level (BS, MS, or PhD), graduation_year, graduation_month, majors, GPA}, work_experience: [{job_title, company, location, duration, job_summary}], project_experience:[{project_name, project_discription}]}
+"""Please analyze the text below and extract the individual's name and only official certifications they possess. Do not include courses, skills, employment details, projects, or any other information. The JSON structure should be: {"Name": "", "Certifications": []}. Only list certifications that are explicitly mentioned in the text.
 """
         # set up this parser's logger
         logging.basicConfig(filename='logs/parser.log', level=logging.DEBUG)
@@ -44,7 +44,7 @@ class ResumeParser():
 
     def query_completion(self,
                         prompt: str,
-                        engine: str = 'text-curie-001',
+                        engine: str = 'gpt-3.5-turbo-instruct',
                         temperature: float = 0.0,
                         max_tokens: int = 100,
                         top_p: int = 1,
@@ -90,15 +90,22 @@ class ResumeParser():
         prompt = self.prompt_questions + '\n' + pdf_str
         max_tokens = 1500
         engine = 'gpt-3.5-turbo-instruct'
+        # engine = 'gpt-4'
         response = self.query_completion(prompt,engine=engine,max_tokens=max_tokens)
         response_text = response.choices[0].text.strip()
-        print(response_text)
+
         try:
             resume = json.loads(response_text)
         except json.JSONDecodeError as e:
             print("Error decoding JSON:", e)
             print("Received response:", response_text)
             return {}
+
+        # Log the output resume to a file
+        with open('resume_logs.jsonl', 'a') as f:
+            json.dump(resume, f)
+            f.write('\n')
+
         return resume
 
 

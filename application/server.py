@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 
 import argparse
 
-from parser import ResumeParser
+from resume_parser import ResumeParser
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
