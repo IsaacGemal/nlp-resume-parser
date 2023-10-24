@@ -3,6 +3,8 @@ import re
 import logging
 import json
 import PyPDF2
+from pdf2image import convert_from_path
+import pytesseract
 
 class ResumeParser():
     def __init__(self, OPENAI_API_KEY):
@@ -20,28 +22,27 @@ class ResumeParser():
         """
         Extract the content of a pdf file to string.
         :param pdf_path: Path to the PDF file.
+        :if it's empty, run OCR
         :return: PDF content string.
         """
         with open(pdf_path, "rb") as f:
             pdfreader = PyPDF2.PdfReader(f)
             pdf = ''
             for page in pdfreader.pages:
-                pdf += page.extract_text()
-
-        # Replace whitespace followed by a comma or period with just a comma.
+                extracted_text = page.extract_text()
+                if extracted_text.strip():
+                    pdf += extracted_text
+                else:
+                    images = convert_from_path(pdf_path)
+                    for img in images:
+                        pdf += pytesseract.image_to_string(img)
+        
         pdf_str = re.sub(r'\s[,.]', ',', pdf)
-
-        # Replace multiple consecutive newline characters with a single newline.
         pdf_str = re.sub('[\n]+', '\n', pdf_str)
-
-        # Replace one or more whitespace characters with a single space.
         pdf_str = re.sub(r'[\s]+', ' ', pdf_str)
-
-        # Remove 'http', 'https', and possible '://' from the text.
         pdf_str = re.sub('http[s]?(://)?', '', pdf_str)
-
+        
         return pdf_str
-
     def query_completion(self,
                         prompt: str,
                         engine: str = 'gpt-3.5-turbo-instruct',
